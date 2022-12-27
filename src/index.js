@@ -15,7 +15,7 @@ const per_page = 40;
 formEll.addEventListener('submit', handleSubmit);
 loadMoreButtonEll.addEventListener('click', handleLoadMore);
 
-function renderpicture(picture) {
+function renderPicture(picture) {
   return `<div class="photo-card">
           <a href=${picture.largeImageURL}><img src=${picture.webformatURL} alt=${picture.tags} loading="lazy" width=270px height=180px/>
     <div class="info">
@@ -64,7 +64,7 @@ async function handleSubmit(e) {
       Notiflix.Notify.success(`Hooray! We found ${pagesLeft} images.`);
       galleryEll.insertAdjacentHTML(
         'beforeend',
-        response.data.hits.map(picture => renderpicture(picture)).join('')
+        response.data.hits.map(picture => renderPicture(picture)).join('')
       );
       pagesLeft -= per_page;
       loadMoreButtonEll.classList.remove('hidden');
@@ -84,7 +84,7 @@ async function handleLoadMore() {
     await getImg(photo, page).then(response =>
       galleryEll.insertAdjacentHTML(
         'beforeend',
-        response.data.hits.map(picture => renderpicture(picture)).join('')
+        response.data.hits.map(picture => renderPicture(picture)).join('')
       )
     );
     pagesLeft -= per_page;
