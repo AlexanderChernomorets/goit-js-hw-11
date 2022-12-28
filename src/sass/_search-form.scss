@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #000000;
+  background: radial-gradient(circle, #9FA4C4 3%, #B3CDD1 60%);
 }
 .searchButton {
   position: fixed;
@@ -13,7 +13,7 @@
   width: 40px;
   height: 36px;
   border: 1px solid #fff;
-  background: #000;
+  background: #9FA4C4;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
